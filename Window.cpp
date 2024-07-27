@@ -17,6 +17,7 @@ void Window::Draw()
 {
     DrawRectangle(data.x, data.y, data.width, data.height, LIGHTGRAY);
     DrawRectangle(data.x, data.y, data.width, 30, WHITE);
+    DrawRectangleLinesEx(Rectangle{(float)data.x, (float)data.y, (float)data.width, (float)data.height}, 3, BLACK);
     DrawText(data.title, data.x + 5, data.y + 7, 20, BLACK);
 }
 
