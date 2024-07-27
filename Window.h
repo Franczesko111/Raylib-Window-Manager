@@ -1,18 +1,17 @@
 #pragma once
 
-#define RAYLIB "C:\\raylib\\raylib\\src\\raylib.h"
-#include RAYLIB
-#include <stdint.h>
+//Raylib and stdint.h inside
+#include "Utils.h"
 
 namespace _window
 {
     struct Data
     {
-        uint16_t x;
-        uint16_t y;
+        int16_t x;
+        int16_t y;
         uint16_t width;
         uint16_t height;
-        
+
         const char* title;
     };
 };
@@ -20,9 +19,14 @@ namespace _window
 class Window
 {
     public:
-        Window(const uint16_t x = 0, const uint16_t y = 0, const uint16_t width = 400, const uint16_t height = 400, const char* title = "Window");
+        Window(const int16_t x = 0, const int16_t y = 0, const uint16_t width = 400, const uint16_t height = 400, const char* title = "Window");
         void Draw();
         void Update();
 
         _window::Data data;
+    
+    private:
+        bool held;
+        uint16_t offset_x;
+        uint16_t offset_y;
 };

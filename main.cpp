@@ -1,21 +1,28 @@
 #include "Window.h"
+#include <vector>
 
 int main()
 {
     InitWindow(1280, 720, "Window Manager");
     SetTargetFPS(60);
 
-    Window window(GetScreenWidth() / 4, GetScreenHeight() / 4, GetScreenWidth() / 2, GetScreenHeight() / 2, "Test");
+    std::vector<Window> windows;
+    windows.push_back(Window(100, 100, 200, 200, "Test"));
+    windows.push_back(Window(400, 400, 200, 200, "Another test"));
 
     while(WindowShouldClose() == false)
     {
         BeginDrawing();
 
-        window.Update();
+        for(Window& window: windows) {
+            window.Update();
+        }
 
         ClearBackground(RED);
 
-        window.Draw();
+        for(Window& window: windows) {
+            window.Draw();
+        }
 
         EndDrawing();
     }
