@@ -1,6 +1,6 @@
 {
     "code-runner.executorMap": {
-        "cpp": "cd $dir  &&  clear g++ main.cpp -o game.exe -Wall -std=c++20 -Wno-missing-braces -I C:\\raylib\\raylib\\src\\raylib.h/ -L C:\\raylib\\raylib\\src/ -lraylib -lopengl32 -lgdi32 -lwinmm  &&  ./game.exe "
+        "cpp": "cd $dir  &&  g++ *.cpp -o game.exe -Wall -std=c++20 -Wno-missing-braces -I C:\\raylib\\raylib\\src/ -L C:\\raylib\\raylib\\src/ -lraylib -lopengl32 -lgdi32 -lwinmm  &&  ./game.exe "
     },
     "files.exclude": {
         ".gitignore": true,
