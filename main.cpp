@@ -8,20 +8,23 @@ int main()
 
     std::vector<Window> windows;
     windows.push_back(Window(100, 100, 200, 200, "Test"));
-    windows.push_back(Window(400, 400, 200, 200, "Another test"));
+    windows.push_back(Window(350, 300, 200, 200, "Another test"));
+    windows.push_back(Window(600, 500, 200, 200, "Yet another test"));
+    windows.push_back(Window(850, 300, 200, 200, "What am I doing"));
 
-    std::vector<Window>::iterator window_iterator;
+    std::vector<Window>::reverse_iterator window_iterator;
 
     while(WindowShouldClose() == false)
     {
         BeginDrawing();
 
-        for(window_iterator = windows.begin(); window_iterator != windows.end(); ++window_iterator) {
+        for(window_iterator = windows.rbegin(); window_iterator != windows.rend(); ++window_iterator) {
             window_iterator->Update();
             if(window_iterator->held) {
                 Window temp = *window_iterator;
-                windows.erase(window_iterator);
+                windows.erase((window_iterator + 1).base());
                 windows.push_back(temp);
+                break;
             }
         }
 
