@@ -1,6 +1,8 @@
 #include "Window.h"
 #include <vector>
 
+void WindowLayering(std::vector<Window>& windows, std::vector<Window>::reverse_iterator& it);
+
 int main()
 {
     InitWindow(1280, 720, "Window Manager");
@@ -18,15 +20,7 @@ int main()
     {
         BeginDrawing();
 
-        for(window_iterator = windows.rbegin(); window_iterator != windows.rend(); ++window_iterator) {
-            window_iterator->Update();
-            if(window_iterator->held) {
-                Window temp = *window_iterator;
-                windows.erase((window_iterator + 1).base());
-                windows.push_back(temp);
-                break;
-            }
-        }
+        WindowLayering(windows, window_iterator);
 
         ClearBackground(RED);
 
@@ -39,4 +33,17 @@ int main()
 
     CloseWindow();
     return 0;
+}
+
+void WindowLayering(std::vector<Window>& vec, std::vector<Window>::reverse_iterator& it)
+{
+    for(it = vec.rbegin(); it != vec.rend(); ++it) {
+        it->Update();
+        if(it->held) {
+            Window temp = *it;
+            vec.erase((it + 1).base());
+            vec.push_back(temp);
+            break;
+        }
+    }
 }
