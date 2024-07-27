@@ -24,9 +24,9 @@ class Window
         void Update();
 
         _window::Data data;
+        bool held;
     
     private:
-        bool held;
         uint16_t offset_x;
         uint16_t offset_y;
 };

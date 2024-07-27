@@ -10,12 +10,19 @@ int main()
     windows.push_back(Window(100, 100, 200, 200, "Test"));
     windows.push_back(Window(400, 400, 200, 200, "Another test"));
 
+    std::vector<Window>::iterator window_iterator;
+
     while(WindowShouldClose() == false)
     {
         BeginDrawing();
 
-        for(Window& window: windows) {
-            window.Update();
+        for(window_iterator = windows.begin(); window_iterator != windows.end(); ++window_iterator) {
+            window_iterator->Update();
+            if(window_iterator->held) {
+                Window temp = *window_iterator;
+                windows.erase(window_iterator);
+                windows.push_back(temp);
+            }
         }
 
         ClearBackground(RED);

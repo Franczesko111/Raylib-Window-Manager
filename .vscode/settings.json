@@ -6,5 +6,8 @@
         ".gitignore": true,
         "LICENSE": true,
         "*.exe": true
+    },
+    "files.associations": {
+        "vector": "cpp"
     }
 }
