@@ -6,12 +6,14 @@
 
 namespace _window
 {
-    struct Position
+    struct Data
     {
         uint16_t x;
         uint16_t y;
         uint16_t width;
         uint16_t height;
+        
+        const char* title;
     };
 };
 
@@ -22,6 +24,5 @@ class Window
         void Draw();
         void Update();
 
-        _window::Position position;
-        const char* title;
+        _window::Data data;
 };
