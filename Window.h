@@ -1,7 +1,8 @@
 #pragma once
 
-//Raylib and stdint.h inside
-#include "Utils.h"
+#include <stdint.h>
+#define RAYLIB "C:\\raylib\\raylib\\src\\raylib.h"
+#include RAYLIB
 
 namespace _window
 {
@@ -27,6 +28,8 @@ class Window
         bool held;
     
     private:
+        bool IsMouseHovered(const int16_t x, const int16_t y, const uint16_t width, const uint16_t height);
+
         uint16_t offset_x;
         uint16_t offset_y;
 };

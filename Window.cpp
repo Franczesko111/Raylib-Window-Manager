@@ -1,5 +1,7 @@
 #include "Window.h"
 
+
+// ! PUBLIC FUNCTIONS
 Window::Window(const int16_t x, const int16_t y, const uint16_t width, const uint16_t height, const char* title)
 {
     held = false;
@@ -23,7 +25,7 @@ void Window::Draw()
 
 void Window::Update()
 {
-    if(utils::IsMouseHovered(data.x, data.y, data.width, 30))
+    if(IsMouseHovered(data.x, data.y, data.width, 30))
     {
         if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
             held = true;
@@ -38,4 +40,11 @@ void Window::Update()
         data.x = GetMouseX() - offset_x;
         data.y = GetMouseY() - offset_y;
     }
+}
+
+
+// ! PRIVATE FUNCTIONS
+bool Window::IsMouseHovered(const int16_t x, const int16_t y, const uint16_t width, const uint16_t height)
+{
+    return (GetMouseX() > x && GetMouseX() < x + width && GetMouseY() > y && GetMouseY() < y + height);
 }
