@@ -17,15 +17,18 @@ Window::Window(const int16_t x, const int16_t y, const uint16_t width, const uin
 
 void Window::Draw(const std::function<void()>& DrawEverything)
 {
+    // Window background
     DrawRectangle(data.x, data.y, data.width, data.height, LIGHTGRAY);
+
+    // Lambda function draws everything
+    BeginScissorMode(data.x, data.y + 30, data.width, data.height - 30);
+    DrawEverything();
+    EndScissorMode();
+
+    // Rest of window stuff
     DrawRectangle(data.x, data.y, data.width, 30, WHITE);
     DrawRectangleLinesEx(Rectangle{(float)data.x, (float)data.y, (float)data.width, (float)data.height}, 3, BLACK);
     DrawText(data.title, data.x + 5, data.y + 7, 20, BLACK);
-
-    // Lambda function draws everything
-    BeginScissorMode(data.x, data.y, data.width, data.height);
-    DrawEverything();
-    EndScissorMode();
 }
 
 void Window::Update()
