@@ -25,7 +25,9 @@ int main()
         ClearBackground(RED);
 
         for(Window& window: windows) {
-            window.Draw();
+            window.Draw([&]() {
+                DrawRectangle(100 + window.data.x, 100 + window.data.y, 50, 50, GREEN);
+            });
         }
 
         EndDrawing();

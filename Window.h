@@ -1,8 +1,9 @@
 #pragma once
 
-#include <stdint.h>
 #define RAYLIB "C:\\raylib\\raylib\\src\\raylib.h"
 #include RAYLIB
+#include <stdint.h>
+#include <functional>
 
 namespace _window
 {
@@ -21,7 +22,7 @@ class Window
 {
     public:
         Window(const int16_t x = 0, const int16_t y = 0, const uint16_t width = 400, const uint16_t height = 400, const char* title = "Window");
-        void Draw();
+        void Draw(const std::function<void()>& DrawEverything);
         void Update();
 
         _window::Data data;
