@@ -6,7 +6,15 @@ $~$
 
 
 ## HOW TO USE
-To use this tool you have to download [raylib](https://www.raylib.com/) (what a surprise!)
+To use this tool you have to download [raylib](https://www.raylib.com/). Create a folder inside this project named "raylib" and put the "raylib.h" and "libraylib.a" file in there.
+
+**MAKE SURE TO HAVE MAKE INSTALLED!**
+
+ - For Windows users, I recommend downloading [scoop](https://scoop.sh/). Then with the `scoop install main/make` command download MAKE.
+
+ - For Linux users (Ubuntu, Debian): `apt install make`
+
+ - For Mac users download [brew](https://brew.sh/) and run this command: `brew install make`
 
 You can do whatever you want with this tool, just make sure to credit me if you use it! (please :D)
 

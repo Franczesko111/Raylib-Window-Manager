@@ -1,11 +1,9 @@
 {
-    "code-runner.executorMap": {
-        "cpp": "cd $dir  &&  g++ *.cpp -o game.exe -Wall -std=c++20 -Wno-missing-braces -I C:\\raylib\\raylib\\src/ -L C:\\raylib\\raylib\\src/ -lraylib -lopengl32 -lgdi32 -lwinmm  &&  ./game.exe "
-    },
     "files.exclude": {
         ".gitignore": true,
         "LICENSE": true,
-        "*.exe": true
+        "*.exe": true,
+        "raylib": true
     },
     "files.associations": {
         "vector": "cpp",
@@ -37,6 +35,7 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "xhash": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "iostream": "cpp"
     }
 }

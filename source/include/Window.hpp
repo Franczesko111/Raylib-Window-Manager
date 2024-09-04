@@ -1,9 +1,5 @@
 #pragma once
-
-#define RAYLIB "C:\\raylib\\raylib\\src\\raylib.h"
-#include RAYLIB
-#include <stdint.h>
-#include <functional>
+#include "common/PCH.hpp"
 
 namespace _window
 {
