@@ -16,6 +16,8 @@ To use this tool you have to download [raylib](https://www.raylib.com/). Create 
 
  - For Mac users download [brew](https://brew.sh/) and run this command: `brew install make`
 
+Inside the Makefile, you can change your `DEFAULT_OS` option to either `win` or `mac` and then run `make` to compile AND run the project. You can also do `make win/mac` to just compile and then `make run` to run it.
+
 You can do whatever you want with this tool, just make sure to credit me if you use it! (please :D)
 
 
